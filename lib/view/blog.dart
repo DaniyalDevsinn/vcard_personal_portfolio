@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:vcard_personal_portfolio/utils/app_color.dart';
 import 'package:vcard_personal_portfolio/view/Portfolio.dart';
 import 'package:vcard_personal_portfolio/view/aboutsection.dart';
-import 'package:vcard_personal_portfolio/view/blog.dart';
 import 'package:vcard_personal_portfolio/view/contact.dart';
 import 'package:vcard_personal_portfolio/view/customer.dart';
+import 'package:vcard_personal_portfolio/view/homescreen.dart';
 import 'package:vcard_personal_portfolio/view/portfoliosdection.dart';
 import 'package:vcard_personal_portfolio/view/resume.dart';
 // import 'package:vcard_personal_portfolio/view/aboutsection.dart';
@@ -14,10 +14,10 @@ import 'package:vcard_personal_portfolio/view/resume.dart';
 // import 'package:vcard_personal_portfolio/view/portfoliosdection.dart';
 // import 'package:vcard_personal_portfolio/view/resumesection.dart';
 
-class HomeScreen extends StatelessWidget {
+class Blog extends StatelessWidget {
   final ScrollController _controller = ScrollController();
 
-  HomeScreen({super.key});
+  Blog({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -391,7 +391,7 @@ class HomeScreen extends StatelessWidget {
                                   child: Column(
                                     children: [
                                       Container(
-                                        height: s.height * 1.8,
+                                        height: s.height * 1.5,
                                         width: s.width * 0.6,
                                         decoration: BoxDecoration(
                                           color: AppColor.cardcolor,
@@ -409,7 +409,7 @@ class HomeScreen extends StatelessWidget {
                                                   padding: EdgeInsets.only(
                                                       left: 40, top: 40),
                                                   child: Text(
-                                                    "About me",
+                                                    "Blog",
                                                     style: TextStyle(
                                                         fontSize: 40,
                                                         color: AppColor.t2Color,
@@ -433,7 +433,7 @@ class HomeScreen extends StatelessWidget {
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
                                                             .spaceEvenly,
-                                                    children: [
+                                                   children: [
                                                       InkWell(onTap: () {
                                                          Navigator.push(context,
                         MaterialPageRoute(builder: ((context) => HomeScreen())));
@@ -511,7 +511,7 @@ class HomeScreen extends StatelessWidget {
                                                                                                                ),
                                                        ),
                                                     ],
-                                                  ),
+                                                    ),
                                                 ),
                                               ],
                                             ),
@@ -531,113 +531,105 @@ class HomeScreen extends StatelessWidget {
                                                   ),
                                                 ],
                                               ),
+                                              
                                             ),
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 40, top: 20, right: 40),
-                                              child: Text(
-                                                "I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I \nenjoy turning complex problems into simple, beautiful and intuitive designs.\n \nMy job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover,\nI add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.",
-                                                style: TextStyle(
-                                                    color: AppColor.t2Color,
-                                                    wordSpacing: 2,
-                                                    fontFamily: "FontR"),
+                                            const SizedBox(height: 40),
+                                            Container(height: s.height * 1.2,
+                                              width: s.width ,
+                                              child: GridView.builder(
+                                                gridDelegate:
+                                                    const SliverGridDelegateWithFixedCrossAxisCount(
+                                                  crossAxisCount: 2,
+                                                  childAspectRatio: 0.8,
+                                                  crossAxisSpacing: 10,
+                                                  mainAxisSpacing: 10,
+                                                ),
+                                                itemCount: list.length,
+                                                itemBuilder: (context, index) {
+                                                  return Card(
+                                                    child: Container(
+                                                      height: s.height * 0.3,
+                                                      width: s.width * 0.4,
+                                                      decoration: BoxDecoration(
+                                                          color: AppColor.cardcolor,
+                                                          borderRadius:
+                                                              BorderRadius.circular(20)),
+                                                      child: Column(
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsets.all(8.0),
+                                                            child: Container(
+                                                              height: 250,
+                                                              width: s.width,
+                                                              decoration: BoxDecoration(
+                                                                  image: DecorationImage(
+                                                                      image: AssetImage(list[
+                                                                              index][
+                                                                          "icon"]!),
+                                                                      fit:
+                                                                          BoxFit.fill),
+                                                                  color:
+                                                                      AppColor.embkcolor,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(30)),
+                                                            ),
+                                                          ),
+                                                          Row(
+                                                            children: [
+                                                              Row(
+                                                                children: [
+                                                                  Padding(
+                                                                    padding: const EdgeInsets.all(8.0),
+                                                                    child: Text("Design_FEB 23,2002",
+                                                                        style: TextStyle(
+                                                                            color: Colors.grey.shade400,
+                                                                            fontSize: 20,
+                                                                            fontWeight:
+                                                                                FontWeight.bold)),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Text(
+                                                            list[index]["title"]!,
+                                                            style: const TextStyle(
+                                                                color: AppColor.t2Color,
+                                                                fontSize: 25,
+                                                                fontWeight:
+                                                                    FontWeight.bold),
+                                                          ),
+                                                          const SizedBox(height: 10),
+                                                          Text(
+                                                            list[index]["subtitle"]!,
+                                                            style: const TextStyle(
+                                                                color: AppColor.t2Color,
+                                                                fontSize: 20),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
                                               ),
                                             ),
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 40, top: 40),
-                                              child: Row(
-                                                children: [
-                                                  Text(
-                                                    "What I'm Doing",
-                                                    style: TextStyle(
-                                                        fontSize: 30,
-                                                        color: AppColor.t2Color,
-                                                        fontWeight:
-                                                            FontWeight.w600),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 15,
-                                                      vertical: 10),
-                                              child: Container(
-                                                  height: s.height * 0.4,
-                                                  width: s.width * 0.8,
-                                                  color: AppColor.cardcolor
-                                                  //  decoration:BoxDecoration(color: AppColor.backgroundColor)
-                                                  ,
-                                                  child: AboutSection()),
-                                            ),
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 40, top: 40),
-                                              child: Row(
-                                                children: [
-                                                  Text(
-                                                    "What I'm Doing",
-                                                    style: TextStyle(
-                                                        fontSize: 30,
-                                                        color: AppColor.t2Color,
-                                                        fontWeight:
-                                                            FontWeight.w600),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            Container(
-                                                height: s.height * 0.3,
-                                                width: s.width,
-                                                color: AppColor.cardcolor
-                                                //  decoration:BoxDecoration(color: AppColor.backgroundColor)
-                                                ,
-                                                child: PortfoliosSection()),
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 40,
-                                                  top: 40,
-                                                  bottom: 20),
-                                              child: Row(
-                                                children: [
-                                                  Text(
-                                                    "Clients",
-                                                    style: TextStyle(
-                                                        fontSize: 30,
-                                                        color: AppColor.t2Color,
-                                                        fontWeight:
-                                                            FontWeight.w600),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            Container(
-                                                height: s.height * 0.3,
-                                                width: s.width,
-                                                color: AppColor.cardcolor
-                                                //  decoration:BoxDecoration(color: AppColor.backgroundColor)
-                                                ,
-                                                child: Customer()),
+                                 
+                                           
                                           ],
                                         ),
                                       ),
-                                    ],
+                                        ],
                                   ),
                                 ),
                               ],
                             )
-                          : Container(), // Add a fallback widget for the ternary operator
-                ], // Close the children list
+                          : Container(), 
+                ], 
               ),
             ),
-            // HeaderSection(),
-            // AboutSection(),
-            // ResumeSection(),
-            // PortfolioSection(),
-            // BlogSection(),
-            // ContactSection(),
+           
           ],
         ),
       ),
@@ -647,25 +639,37 @@ class HomeScreen extends StatelessWidget {
 
 final List<Map<String, String>> list = [
   {
-    "icon": "assets/icon-design.png",
-    "title": "Web Design",
+    "icon": "assets/blog-1.jpg",
+    "title": "Design conferences in 2022",
     "subtitle":
-        "The most modern and high-quality design made at a professional level.",
+        " Veritatis et quasi architecto\n beatae vitae dicta sunt, explicabo.",
   },
   {
-    "icon": "assets/icon-dev.png",
-    "title": "Web Development",
-    "subtitle": "High-quality development of sites at the professional level.",
+    "icon": "assets/blog-2.jpg",
+    "title": "Best fonts every designer",
+    "subtitle": "Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.",
   },
   {
-    "icon": "assets/icon-app.png",
-    "title": "Mobile Apps",
-    "subtitle": "Professional development of applications for iOS and Android.",
+    "icon": "assets/blog-3.jpg",
+    "title": "Design digest #80",
+    "subtitle": "Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.",
   },
   {
-    "icon": "assets/icon-photo.png",
-    "title": "Photography",
+    "icon": "assets/blog-4.jpg",
+    "title": "UI interactions of the week",
     "subtitle":
-        "I make high-quality photos of any category at a professional level.",
+        "Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.",
+  },
+  {
+    "icon": "assets/blog-5.jpg",
+    "title": "The forgotten art of spacing",
+    "subtitle":
+        "Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    "icon": "assets/blog-6.jpg",
+    "title": "Design digest #79",
+    "subtitle":
+        "Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.",
   }
 ];

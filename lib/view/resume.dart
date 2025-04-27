@@ -5,8 +5,8 @@ import 'package:vcard_personal_portfolio/view/aboutsection.dart';
 import 'package:vcard_personal_portfolio/view/blog.dart';
 import 'package:vcard_personal_portfolio/view/contact.dart';
 import 'package:vcard_personal_portfolio/view/customer.dart';
+import 'package:vcard_personal_portfolio/view/homescreen.dart';
 import 'package:vcard_personal_portfolio/view/portfoliosdection.dart';
-import 'package:vcard_personal_portfolio/view/resume.dart';
 // import 'package:vcard_personal_portfolio/view/aboutsection.dart';
 // import 'package:vcard_personal_portfolio/view/blogsection.dart';
 // import 'package:vcard_personal_portfolio/view/contactsection.dart';
@@ -14,10 +14,10 @@ import 'package:vcard_personal_portfolio/view/resume.dart';
 // import 'package:vcard_personal_portfolio/view/portfoliosdection.dart';
 // import 'package:vcard_personal_portfolio/view/resumesection.dart';
 
-class HomeScreen extends StatelessWidget {
+class Resume extends StatelessWidget {
   final ScrollController _controller = ScrollController();
 
-  HomeScreen({super.key});
+  Resume({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -391,7 +391,7 @@ class HomeScreen extends StatelessWidget {
                                   child: Column(
                                     children: [
                                       Container(
-                                        height: s.height * 1.8,
+                                        height: s.height * 2.1,
                                         width: s.width * 0.6,
                                         decoration: BoxDecoration(
                                           color: AppColor.cardcolor,
@@ -409,7 +409,7 @@ class HomeScreen extends StatelessWidget {
                                                   padding: EdgeInsets.only(
                                                       left: 40, top: 40),
                                                   child: Text(
-                                                    "About me",
+                                                    "Resume",
                                                     style: TextStyle(
                                                         fontSize: 40,
                                                         color: AppColor.t2Color,
@@ -433,7 +433,7 @@ class HomeScreen extends StatelessWidget {
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
                                                             .spaceEvenly,
-                                                    children: [
+                                                children: [
                                                       InkWell(onTap: () {
                                                          Navigator.push(context,
                         MaterialPageRoute(builder: ((context) => HomeScreen())));
@@ -511,7 +511,7 @@ class HomeScreen extends StatelessWidget {
                                                                                                                ),
                                                        ),
                                                     ],
-                                                  ),
+                                                   ),
                                                 ),
                                               ],
                                             ),
@@ -532,97 +532,452 @@ class HomeScreen extends StatelessWidget {
                                                 ],
                                               ),
                                             ),
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 40, top: 20, right: 40),
-                                              child: Text(
-                                                "I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I \nenjoy turning complex problems into simple, beautiful and intuitive designs.\n \nMy job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover,\nI add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.",
-                                                style: TextStyle(
-                                                    color: AppColor.t2Color,
-                                                    wordSpacing: 2,
-                                                    fontFamily: "FontR"),
-                                              ),
-                                            ),
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 40, top: 40),
-                                              child: Row(
-                                                children: [
-                                                  Text(
-                                                    "What I'm Doing",
-                                                    style: TextStyle(
-                                                        fontSize: 30,
-                                                        color: AppColor.t2Color,
-                                                        fontWeight:
-                                                            FontWeight.w600),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
                                             Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 15,
-                                                      vertical: 10),
-                                              child: Container(
-                                                  height: s.height * 0.4,
-                                                  width: s.width * 0.8,
-                                                  color: AppColor.cardcolor
-                                                  //  decoration:BoxDecoration(color: AppColor.backgroundColor)
-                                                  ,
-                                                  child: AboutSection()),
-                                            ),
-                                            const Padding(
-                                              padding: EdgeInsets.only(
+                                               padding: const EdgeInsets.only(
                                                   left: 40, top: 40),
                                               child: Row(
                                                 children: [
-                                                  Text(
-                                                    "What I'm Doing",
+                                                  Container(
+                                                    height: 40,
+                                                    width: 40,
+                                                    decoration: BoxDecoration(
+                                                        color: Color.fromARGB(255, 95, 95, 95),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(12)),
+                                                                child: Image(image: AssetImage('assets/book.png'),height: 20,width: 20,),
+                                                  ),
+                                                  SizedBox(width: 10),
+                                                  const Text(
+                                                    "Education",
                                                     style: TextStyle(
                                                         fontSize: 30,
                                                         color: AppColor.t2Color,
                                                         fontWeight:
-                                                            FontWeight.w600),
+                                                            FontWeight.bold),
                                                   ),
+                                                  const SizedBox(height: 10),
+                                                 
                                                 ],
+                                                
                                               ),
                                             ),
-                                            Container(
-                                                height: s.height * 0.3,
-                                                width: s.width,
-                                                color: AppColor.cardcolor
-                                                //  decoration:BoxDecoration(color: AppColor.backgroundColor)
-                                                ,
-                                                child: PortfoliosSection()),
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 40,
-                                                  top: 40,
-                                                  bottom: 20),
+                                             const Padding(
+                                               padding: EdgeInsets.only(
+                                                  left: 70, top: 40),
+                                               child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
+                                                 children: [
+                                                   Row(
+                                                     children: [
+                                                       Text(
+                                                              "University school of the arts",
+                                                              style: TextStyle(
+                                                                  fontSize: 20,
+                                                                  color: AppColor.t2Color,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                     ],
+                                                   ),
+                                                        SizedBox(height: 5),
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                              "2007 — 2008",
+                                                              style: TextStyle(
+                                                                  fontSize: 15,
+                                                                  color: AppColor.tColor,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                              "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos\n dolores et quas molestias exceptur.",
+                                                              style: TextStyle(overflow: TextOverflow.ellipsis,
+                                                                  fontSize: 15,
+                                                                  color: AppColor.t2Color,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                 ],
+                                               ),
+                                             ),
+                                             const Padding(
+                                               padding: EdgeInsets.only(
+                                                  left: 70, top: 40),
+                                               child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
+                                                 children: [
+                                                   Row(
+                                                     children: [
+                                                       Text(
+                                                              "New york academy of art",
+                                                              style: TextStyle(
+                                                                  fontSize: 20,
+                                                                  color: AppColor.t2Color,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                     ],
+                                                   ),
+                                                        SizedBox(height: 5),
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                              "2006 — 2007",
+                                                              style: TextStyle(
+                                                                  fontSize: 15,
+                                                                  color: AppColor.tColor,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                              "Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus,\n omnis voluptas assumenda est omnis..",
+                                                              style: TextStyle(overflow: TextOverflow.ellipsis,
+                                                                  fontSize: 15,
+                                                                  color: AppColor.t2Color,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                 ],
+                                               ),
+                                             ),
+                                             const Padding(
+                                               padding: EdgeInsets.only(
+                                                  left: 70, top: 40),
+                                               child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
+                                                 children: [
+                                                   Row(
+                                                     children: [
+                                                       Text(
+                                                              "High school of art and design",
+                                                              style: TextStyle(
+                                                                  fontSize: 20,
+                                                                  color: AppColor.t2Color,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                     ],
+                                                   ),
+                                                        SizedBox(height: 5),
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                              "2002 — 2004",
+                                                              style: TextStyle(
+                                                                  fontSize: 15,
+                                                                  color: AppColor.tColor,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                              "Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit,\n sed consequuntur magni dolores eos.",
+                                                              style: TextStyle(overflow: TextOverflow.ellipsis,
+                                                                  fontSize: 15,
+                                                                  color: AppColor.t2Color,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                 ],
+                                               ),
+                                             ),
+                                                Padding(
+                                               padding: const EdgeInsets.only(
+                                                  left: 40, top: 40),
                                               child: Row(
                                                 children: [
-                                                  Text(
-                                                    "Clients",
+                                                  Container(
+                                                    height: 40,
+                                                    width: 40,
+                                                    decoration: BoxDecoration(
+                                                        color: Color.fromARGB(255, 95, 95, 95),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(12)),
+                                                                child: Image(image: AssetImage('assets/book.png'),height: 20,width: 20,),
+                                                  ),
+                                                  SizedBox(width: 10),
+                                                  const Text(
+                                                    "Experience",
                                                     style: TextStyle(
                                                         fontSize: 30,
                                                         color: AppColor.t2Color,
                                                         fontWeight:
-                                                            FontWeight.w600),
+                                                            FontWeight.bold),
                                                   ),
+                                                  const SizedBox(height: 10),
+                                                 
                                                 ],
+                                                
                                               ),
                                             ),
-                                            Container(
-                                                height: s.height * 0.3,
-                                                width: s.width,
-                                                color: AppColor.cardcolor
-                                                //  decoration:BoxDecoration(color: AppColor.backgroundColor)
-                                                ,
-                                                child: Customer()),
+                                             const Padding(
+                                               padding: EdgeInsets.only(
+                                                  left: 70, top: 40),
+                                               child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
+                                                 children: [
+                                                   Row(
+                                                     children: [
+                                                       Text(
+                                                              "Creative director",
+                                                              style: TextStyle(
+                                                                  fontSize: 20,
+                                                                  color: AppColor.t2Color,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                     ],
+                                                   ),
+                                                        SizedBox(height: 5),
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                              "2015 — Present",
+                                                              style: TextStyle(
+                                                                  fontSize: 15,
+                                                                  color: AppColor.tColor,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                              "Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos\n dolores et qvuas molestias exceptur.",
+                                                              style: TextStyle(overflow: TextOverflow.ellipsis,
+                                                                  fontSize: 15,
+                                                                  color: AppColor.t2Color,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                 ],
+                                               ),
+                                             ),
+                                             const Padding(
+                                               padding: EdgeInsets.only(
+                                                  left: 70, top: 40),
+                                               child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
+                                                 children: [
+                                                   Row(
+                                                     children: [
+                                                       Text(
+                                                              "Art director",
+                                                              style: TextStyle(
+                                                                  fontSize: 20,
+                                                                  color: AppColor.t2Color,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                     ],
+                                                   ),
+                                                        SizedBox(height: 5),
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                              "2013 — 2015",
+                                                              style: TextStyle(
+                                                                  fontSize: 15,
+                                                                  color: AppColor.tColor,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                              "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos\n dolores et quas molestias exceptur.",
+                                                              style: TextStyle(overflow: TextOverflow.ellipsis,
+                                                                  fontSize: 15,
+                                                                  color: AppColor.t2Color,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                 ],
+                                               ),
+                                             ),
+                                             const Padding(
+                                               padding: EdgeInsets.only(
+                                                  left: 70, top: 40),
+                                               child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
+                                                 children: [
+                                                   Row(
+                                                     children: [
+                                                       Text(
+                                                              "Web designer",
+                                                              style: TextStyle(
+                                                                  fontSize: 20,
+                                                                  color: AppColor.t2Color,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                     ],
+                                                   ),
+                                                        SizedBox(height: 5),
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                              "2010 — 2013",
+                                                              style: TextStyle(
+                                                                  fontSize: 15,
+                                                                  color: AppColor.tColor,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                              "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos\n dolores et quas molestias exceptur.",
+                                                              style: TextStyle(overflow: TextOverflow.ellipsis,
+                                                                  fontSize: 15,
+                                                                  color: AppColor.t2Color,
+                                                                  fontWeight:
+                                                                      FontWeight.bold),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                 ],
+                                               ),
+                                             ),
+                                              Padding(
+                                               padding: const EdgeInsets.only(
+                                                  left: 40, top: 40),
+                                              child: Row(
+                                                children: [
+                                                  
+                                                  const Text(
+                                                    "My Skills",
+                                                    style: TextStyle(
+                                                        fontSize: 30,
+                                                        color: AppColor.t2Color,
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  ),
+                                                  
+                                                        
+                                                 
+                                                ],
+                                                
+                                              ),
+                                            ),
+                                        const SizedBox(height: 10),
+                                                  Padding(
+                                                          padding:
+                                                              const EdgeInsets.only(
+                                                                  left: 40, top: 5),
+                                                          child: Container(
+                                                            height: s.height*0.5,
+                                                            width: s.width*0.5,
+                                                            decoration: BoxDecoration(border: Border.all(color: const Color.fromARGB(255, 83, 83, 83)),
+                                                                // color:
+                                                                //     AppColor.tColor,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                      .circular(25)),
+                                                                      child: 
+                                                                      Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                                        children: [SizedBox(height: 10,),
+                                                                          ListTile(
+                                                                            title: const Text(
+                                                                              "Web Design 80%",
+                                                                              style: TextStyle(
+                                                                                  fontSize: 20,
+                                                                                  color: AppColor.t2Color,
+                                                                                  fontWeight:
+                                                                                      FontWeight.bold),
+                                                                            ),
+                                                                            subtitle: LinearProgressIndicator(borderRadius: BorderRadius.circular(5),
+                                                                              value: 0.8,
+                                                                              backgroundColor:
+                                                                                 Color(0xff383838),
+                                                                              color: AppColor.tColor,
+                                                                              minHeight:
+                                                                                  10,)
+                                                                            ),SizedBox(height: 10,),
+                                                                            ListTile(
+                                                                        title: const Text(
+                                                                          "Graphic design 70%",
+                                                                          style: TextStyle(
+                                                                              fontSize: 20,
+                                                                              color: AppColor.t2Color,
+                                                                              fontWeight:
+                                                                                  FontWeight.bold),
+                                                                        ),
+                                                                        subtitle: LinearProgressIndicator(borderRadius: BorderRadius.circular(5),
+                                                                          value: 0.7,
+                                                                          backgroundColor:
+                                                                           Color(0xff383838),
+                                                                          color: AppColor.tColor,
+                                                                          minHeight:
+                                                                              10,)
+                                                                        ),SizedBox(height: 10,),
+                                                                        ListTile(
+                                                                        title: const Text(
+                                                                          "Branding 90%",
+                                                                          style: TextStyle(
+                                                                              fontSize: 20,
+                                                                              color: AppColor.t2Color,
+                                                                              fontWeight:
+                                                                                  FontWeight.bold),
+                                                                        ),
+                                                                        subtitle: LinearProgressIndicator(borderRadius: BorderRadius.circular(5),
+                                                                          value: 0.9,
+                                                                          backgroundColor:
+                                                                             Color(0xff383838),
+                                                                          color: AppColor.tColor,
+                                                                          minHeight:
+                                                                              10,)
+                                                                        ),
+                                                                        SizedBox(height: 10,),
+                                                                        ListTile(
+                                                                        title: const Text(
+                                                                          "WordPress 50%",
+                                                                          style: TextStyle(
+                                                                              fontSize: 20,
+                                                                              color: AppColor.t2Color,
+                                                                              fontWeight:
+                                                                                  FontWeight.bold),
+                                                                        ),
+                                                                        subtitle: LinearProgressIndicator(borderRadius: BorderRadius.circular(5),
+                                                                          value: 0.5,
+                                                                          backgroundColor:
+                                                                              Color(0xff383838),
+                                                                          color: AppColor.tColor,
+                                                                          minHeight:
+                                                                              10,)
+                                                                        ),
+                                                                        ],
+                                                                      ),
+                                                                        
+                                                                      )
+                                                          ),
                                           ],
                                         ),
                                       ),
+                                      
                                     ],
                                   ),
                                 ),

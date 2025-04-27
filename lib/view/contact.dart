@@ -3,8 +3,8 @@ import 'package:vcard_personal_portfolio/utils/app_color.dart';
 import 'package:vcard_personal_portfolio/view/Portfolio.dart';
 import 'package:vcard_personal_portfolio/view/aboutsection.dart';
 import 'package:vcard_personal_portfolio/view/blog.dart';
-import 'package:vcard_personal_portfolio/view/contact.dart';
 import 'package:vcard_personal_portfolio/view/customer.dart';
+import 'package:vcard_personal_portfolio/view/homescreen.dart';
 import 'package:vcard_personal_portfolio/view/portfoliosdection.dart';
 import 'package:vcard_personal_portfolio/view/resume.dart';
 // import 'package:vcard_personal_portfolio/view/aboutsection.dart';
@@ -14,10 +14,10 @@ import 'package:vcard_personal_portfolio/view/resume.dart';
 // import 'package:vcard_personal_portfolio/view/portfoliosdection.dart';
 // import 'package:vcard_personal_portfolio/view/resumesection.dart';
 
-class HomeScreen extends StatelessWidget {
+class Contact extends StatelessWidget {
   final ScrollController _controller = ScrollController();
 
-  HomeScreen({super.key});
+  Contact({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -388,10 +388,10 @@ class HomeScreen extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 30),
                                 SingleChildScrollView(
-                                  child: Column(
+                                  child: Column(mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Container(
-                                        height: s.height * 1.8,
+                                        height: s.height * 1.6,
                                         width: s.width * 0.6,
                                         decoration: BoxDecoration(
                                           color: AppColor.cardcolor,
@@ -409,7 +409,7 @@ class HomeScreen extends StatelessWidget {
                                                   padding: EdgeInsets.only(
                                                       left: 40, top: 40),
                                                   child: Text(
-                                                    "About me",
+                                                    "Contact",
                                                     style: TextStyle(
                                                         fontSize: 40,
                                                         color: AppColor.t2Color,
@@ -433,7 +433,7 @@ class HomeScreen extends StatelessWidget {
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
                                                             .spaceEvenly,
-                                                    children: [
+                                                     children: [
                                                       InkWell(onTap: () {
                                                          Navigator.push(context,
                         MaterialPageRoute(builder: ((context) => HomeScreen())));
@@ -511,7 +511,7 @@ class HomeScreen extends StatelessWidget {
                                                                                                                ),
                                                        ),
                                                     ],
-                                                  ),
+                                                   ),
                                                 ),
                                               ],
                                             ),
@@ -532,95 +532,152 @@ class HomeScreen extends StatelessWidget {
                                                 ],
                                               ),
                                             ),
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 40, top: 20, right: 40),
-                                              child: Text(
-                                                "I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I \nenjoy turning complex problems into simple, beautiful and intuitive designs.\n \nMy job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover,\nI add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.",
-                                                style: TextStyle(
-                                                    color: AppColor.t2Color,
-                                                    wordSpacing: 2,
-                                                    fontFamily: "FontR"),
-                                              ),
-                                            ),
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 40, top: 40),
-                                              child: Row(
-                                                children: [
-                                                  Text(
-                                                    "What I'm Doing",
-                                                    style: TextStyle(
-                                                        fontSize: 30,
-                                                        color: AppColor.t2Color,
-                                                        fontWeight:
-                                                            FontWeight.w600),
+                                            Row(mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsets.only(
+                                                  left: 10, top: 5,right: 10),
+                                                  child: SizedBox(height: 400,width: s.width*0.5,
+                                                    child: Image(image: AssetImage("assets/MAP.PNG",),height: s.height,width: s.width,),
                                                   ),
-                                                ],
-                                              ),
+                                                ),
+                                              ],
                                             ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 15,
-                                                      vertical: 10),
-                                              child: Container(
-                                                  height: s.height * 0.4,
-                                                  width: s.width * 0.8,
-                                                  color: AppColor.cardcolor
-                                                  //  decoration:BoxDecoration(color: AppColor.backgroundColor)
-                                                  ,
-                                                  child: AboutSection()),
-                                            ),
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 40, top: 40),
-                                              child: Row(
-                                                children: [
-                                                  Text(
-                                                    "What I'm Doing",
-                                                    style: TextStyle(
-                                                        fontSize: 30,
-                                                        color: AppColor.t2Color,
-                                                        fontWeight:
-                                                            FontWeight.w600),
+                                             const Padding(
+                                                  padding: EdgeInsets.only(
+                                                      left: 40, top: 40),
+                                                  child: Row(
+                                                    children: [
+                                                      Text(
+                                                        "Contact Form",
+                                                        style: TextStyle(
+                                                            fontSize: 30,
+                                                            color: AppColor.t2Color,
+                                                            fontWeight:
+                                                                FontWeight.bold),
+                                                      ),
+                                                    ],
                                                   ),
-                                                ],
-                                              ),
-                                            ),
-                                            Container(
-                                                height: s.height * 0.3,
-                                                width: s.width,
-                                                color: AppColor.cardcolor
-                                                //  decoration:BoxDecoration(color: AppColor.backgroundColor)
-                                                ,
-                                                child: PortfoliosSection()),
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 40,
-                                                  top: 40,
-                                                  bottom: 20),
-                                              child: Row(
-                                                children: [
-                                                  Text(
-                                                    "Clients",
-                                                    style: TextStyle(
-                                                        fontSize: 30,
-                                                        color: AppColor.t2Color,
-                                                        fontWeight:
-                                                            FontWeight.w600),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            Container(
-                                                height: s.height * 0.3,
-                                                width: s.width,
-                                                color: AppColor.cardcolor
-                                                //  decoration:BoxDecoration(color: AppColor.backgroundColor)
-                                                ,
-                                                child: Customer()),
+                                                ), 
+                                                Column(
+                                                  children: [
+                                                    Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                      children: [
+                                                      
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets.only(
+                                                                  left: 40, top: 5),
+                                                          child: Container(
+                                                            height: 80,
+                                                            width: s.width*0.2,
+                                                            decoration: BoxDecoration(border: Border.all(color: const Color.fromARGB(255, 83, 83, 83)),
+                                                                // color:
+                                                                //     AppColor.tColor,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                      .circular(25)),
+                                                                      child: const TextField(
+                                                                        style: TextStyle(color: Color.fromARGB(255, 228, 227, 225)), // Entry text color
+                                                                        decoration: InputDecoration(
+                                                                        border: InputBorder.none,
+                                                                        hintText: "Full Name",
+                                                                        hintStyle: TextStyle(color: AppColor.t2Color), // Hint text color
+                                                                        contentPadding: EdgeInsets.only(left: 20, top: 20),
+                                                                        ),
+                                                                      ),
+                                                          ),
+                                                        ),
+                                                          Padding(
+                                                          padding:
+                                                              const EdgeInsets.only(
+                                                                  left: 20, top: 5),
+                                                          child: Container(
+                                                            height: 80,
+                                                            width: s.width*0.2,
+                                                            decoration: BoxDecoration(border: Border.all(color: const Color.fromARGB(255, 83, 83, 83)),
+                                                                // color:
+                                                                //     AppColor.tColor,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                      .circular(25)),
+                                                                      child: const TextField(
+                                                                        style: TextStyle(color: Color.fromARGB(255, 228, 227, 225)), // Entry text color
+                                                                        decoration: InputDecoration(
+                                                                        border: InputBorder.none,
+                                                                        hintText: "Email Address",
+                                                                        hintStyle: TextStyle(color: AppColor.t2Color), // Hint text color
+                                                                        contentPadding: EdgeInsets.only(left: 20, top: 20),
+                                                                        ),
+                                                                      ),
+                                                          ),
+                                                        ),
+                                                       
+                                                                                                   
+                                                                                                   
+                                                      ],
+                                                    ),
+                                                     const SizedBox(height: 60,),
+                                                          Padding(
+                                                          padding:
+                                                              const EdgeInsets.only(
+                                                                  left: 40, top: 5),
+                                                          child: Container(
+                                                            height: s.height*0.5,
+                                                            width: s.width*0.5,
+                                                            decoration: BoxDecoration(border: Border.all(color: const Color.fromARGB(255, 83, 83, 83)),
+                                                                // color:
+                                                                //     AppColor.tColor,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                      .circular(25)),
+                                                                      child: const TextField(
+                                                                        style: TextStyle(color: Color.fromARGB(255, 228, 227, 225)), // Entry text color
+                                                                        decoration: InputDecoration(
+                                                                        border: InputBorder.none,
+                                                                        hintText: "Your Message",
+                                                                        hintStyle: TextStyle(color: AppColor.t2Color), // Hint text color
+                                                                        contentPadding: EdgeInsets.only(left: 20, top: 20),
+                                                                        ),
+                                                                      ),
+                                                          ),
+                                                        ),
+                                                        const SizedBox(height: 20,),
+                                                          Row(mainAxisAlignment: MainAxisAlignment.end,
+                                                            children: [
+                                                              Padding(
+                                                                padding: const EdgeInsets.only(left: 30,right: 30),
+                                                                child: Container(
+                                                                  height: 50,
+                                                                  width: 150,
+                                                                  decoration: BoxDecoration(border: Border.all(color: const Color.fromARGB(255, 83, 83, 83)),
+                                                                      // color:
+                                                                      //     AppColor.tColor,
+                                                                      borderRadius:
+                                                                          BorderRadius
+                                                                            .circular(25)),
+                                                                            child: TextButton(
+                                                                              onPressed: () {
+                                                                                // Add your button action here
+                                                                              },
+                                                                              child: const Text(
+                                                                                "Send Message",
+                                                                                style: TextStyle(
+                                                                                    color: AppColor.t2Color,
+                                                                                    fontSize: 10,
+                                                                                    fontWeight: FontWeight.bold),
+                                                                              ),
+                                                                            ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                       
+                                                           
+                                                  ],
+                                                ),
                                           ],
+
                                         ),
                                       ),
                                     ],
